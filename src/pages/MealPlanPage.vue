@@ -48,7 +48,7 @@ const plan = ref([]);
 /* ---------- Initial load ---------- */
 onMounted(async () => {
   try {
-    const { data } = await axios.get("http://localhost:80/users/meal-plan", {
+    const { data } = await axios.get("https://hs-da.cs.bgu.ac.il/users/meal-plan", {
       withCredentials: true,
     });
 
@@ -89,7 +89,7 @@ const progressVariant = (id) => {
 const remove = async (id) => {
   try {
     await axios.delete(
-        `http://localhost:80/users/meal-plan/${id}`,
+        `https://hs-da.cs.bgu.ac.il/users/meal-plan/${id}`,
         { withCredentials: true }
     );
     plan.value = plan.value.filter((r) => r.id !== id);

@@ -82,7 +82,7 @@ export default {
           instructions: this.recipe.instructions,
         };
 
-        await this.axios.post("http://localhost:80/users/addRecipe", payload, {
+        await this.axios.post("https://hs-da.cs.bgu.ac.il/users/addRecipe", payload, {
           withCredentials: true
         });
 

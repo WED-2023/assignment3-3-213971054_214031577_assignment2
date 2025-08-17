@@ -85,7 +85,7 @@ export default {
     async likeRecipe() {
       try {
         await this.axios.post(
-            `http://localhost:80/recipes/${this.recipe.id}/like`,
+            `https://hs-da.cs.bgu.ac.il/recipes/${this.recipe.id}/like`,
             {},
             { withCredentials: true }
         );
@@ -101,7 +101,7 @@ export default {
 
     async toggleFavorite() {
       try {
-        await this.axios.post('http://localhost:80/users/favorites', {
+        await this.axios.post('https://hs-da.cs.bgu.ac.il/users/favorites', {
           recipeId: this.recipe.id
         }, { withCredentials: true });
         this.isFavorited = true;
@@ -114,7 +114,7 @@ export default {
       console.log("Loading recipe ID:", recipeId);
 
       try {
-        const response = await this.axios.get(`http://localhost:80/recipes/${recipeId}`);
+        const response = await this.axios.get(`https://hs-da.cs.bgu.ac.il/recipes/${recipeId}`);
         const recipe = response.data;
 
         const _instructions = recipe.analyzedInstructions?.flatMap((fstep) => {
@@ -143,7 +143,7 @@ export default {
         this.isFavorited = recipe.isFavorited || false;
 
         // ✅ MARK AS WATCHED
-        await this.axios.post("http://localhost:80/users/addWatched", {
+        await this.axios.post("https://hs-da.cs.bgu.ac.il/users/addWatched", {
           recipeId: this.recipe.id
         }, { withCredentials: true });
 

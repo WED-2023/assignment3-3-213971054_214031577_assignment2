@@ -79,7 +79,7 @@ const formatAmount = amt =>
 
 /* ---------- API Load ---------- */
 const loadRecipe = async () => {
-  const { data } = await axios.get(`http://localhost:80/recipes/${id}`, {
+  const { data } = await axios.get(`https://hs-da.cs.bgu.ac.il/recipes/${id}`, {
     withCredentials: true
   });
 
@@ -105,7 +105,7 @@ const loadRecipe = async () => {
 
 const addToMealPlan = async () => {
   try {
-    await axios.post("http://localhost:80/users/meal-plan", {
+    await axios.post("https://hs-da.cs.bgu.ac.il/users/meal-plan", {
       recipeId: id
     }, { withCredentials: true });
 

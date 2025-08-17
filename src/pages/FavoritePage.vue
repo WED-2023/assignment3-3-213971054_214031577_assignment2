@@ -36,7 +36,7 @@ export default {
   },
   async created() {
     try {
-      const { data } = await axios.get('http://localhost:80/users/favorites', {
+      const { data } = await axios.get('https://hs-da.cs.bgu.ac.il/users/favorites', {
         withCredentials: true
       });
       this.recipes = data;

@@ -58,7 +58,7 @@ export default {
   methods: {
     async updateRecipes() {
       try {
-        const response = await this.axios.get(`http://localhost:80/${this.path}`, {
+        const response = await this.axios.get(`https://hs-da.cs.bgu.ac.il/${this.path}`, {
           withCredentials: true
         });
 
@@ -69,7 +69,7 @@ export default {
         let watchedIds = [];
         if (!this.path.includes("lastWatched")) {
           try {
-            const watchedRes = await this.axios.get("http://localhost:80/users/watchedIds", {
+            const watchedRes = await this.axios.get("https://hs-da.cs.bgu.ac.il/users/watchedIds", {
               withCredentials: true
             });
             watchedIds = watchedRes.data;

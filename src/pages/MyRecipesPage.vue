@@ -25,8 +25,8 @@ export default {
   async created() {
     try {
       const [recipesResponse, watchedResponse] = await Promise.all([
-        axios.get("http://localhost:80/users/myRecipes", { withCredentials: true }),
-        axios.get("http://localhost:80/users/lastWatched", {
+        axios.get("https://hs-da.cs.bgu.ac.il/users/myRecipes", { withCredentials: true }),
+        axios.get("https://hs-da.cs.bgu.ac.il/users/lastWatched", {
           params: { limit: 10 },
           withCredentials: true
         })

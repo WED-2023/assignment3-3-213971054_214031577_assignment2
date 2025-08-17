@@ -82,7 +82,7 @@ export default {
         this.$emit('favorite', this.id);
 
         // API call
-        const url = "http://localhost:80/favorites";
+        const url = "https://hs-da.cs.bgu.ac.il/favorites";
         const payload = { recipeId: this.id };
 
         if (isFavorite) {

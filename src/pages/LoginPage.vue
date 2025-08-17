@@ -73,7 +73,7 @@ async function onLogin() {
 
   try {
     const response = await axios.post(
-        'http://localhost:80/auth/Login',
+        'https://hs-da.cs.bgu.ac.il/auth/Login',
         {
           username: form.username,
           password: form.password,

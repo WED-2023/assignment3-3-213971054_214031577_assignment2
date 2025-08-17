@@ -131,10 +131,11 @@ export default {
       };
 
       try {
-        const {data} = await axios.get('http://localhost:80/recipes/search', {
+       const {data} = await axios.get(`${store.server_domain}/recipes/search`, {
           params,
           withCredentials: true
         });
+
         this.results = data;
 
         localStorage.setItem("lastSearch", JSON.stringify({
@@ -154,11 +155,8 @@ export default {
 
     async markAsWatched(recipeId) {
       try {
-        await axios.post("http://localhost:80/users/addWatched", {
-          recipeId
-        }, {
-          withCredentials: true
-        });
+        await axios.post(`${store.server_domain}/users/addWatched`, { recipeId }, { withCredentials: true });
+
         // Optionally update the watchedIds locally
         if (!this.watchedIds.includes(recipeId)) {
           this.watchedIds.push(recipeId);
@@ -189,9 +187,10 @@ export default {
 
       // ✅ Get watched recipe IDs
       try {
-        const {data} = await axios.get("http://localhost:80/users/watchedIds", {
-          withCredentials: true
-        });
+      const {data} = await axios.get(`${store.server_domain}/users/watchedIds`, {
+        withCredentials: true
+      });
+
         this.watchedIds = data;
       } catch (error) {
         console.error("Failed to load watched IDs", error);

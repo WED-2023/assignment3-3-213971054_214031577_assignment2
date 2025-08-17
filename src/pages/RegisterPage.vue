@@ -110,7 +110,7 @@ import axios from 'axios'
 import useVuelidate from '@vuelidate/core'
 import { required, email, helpers } from '@vuelidate/validators'
 
-const API_BASE = 'http://127.0.0.1:80'
+const API_BASE = 'https://hs-da.cs.bgu.ac.il'
 const router = useRouter()
 
 const form = reactive({
